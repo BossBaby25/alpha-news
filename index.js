@@ -70,7 +70,7 @@ const displayNews = (allNews) => {
 
 
         <!-- Button trigger modal -->
-<button onclick = "loadNewsDetails('${news._id}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button onclick = "loadNewsDetails('${news._id}')" type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
 Details <i class="fa-solid fa-arrow-right"></i>
 </button>
 
