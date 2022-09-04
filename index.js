@@ -6,14 +6,11 @@ const categories = () => {
 }
 
 const displayCategories = data => {
-  // console.log(data);
   const categoryLinks = document.getElementById('category-links');
 
   data.forEach(category => {
-    // console.log(category.category_id);
     const li = document.createElement('li');
     li.classList.add('nav-item');
-
     li.innerHTML = `
         <a onclick = "newsByCategorie('${category.category_id}')" class="nav-link" href="#">${category.category_name}</a>
         `
@@ -28,7 +25,6 @@ const newsByCategorie = (id) => {
   spinner.classList.remove("d-none");
 
   const url = `https://openapi.programming-hero.com/api/news/category/${id}`
-  // console.log("url:", url)
   fetch(url)
     .then(res => res.json())
     .then(data => displayNews(data.data))
@@ -47,7 +43,7 @@ const displayNews = (allNews) => {
   const newsContainer = document.getElementById('news-container');
   newsContainer.textContent = " ";
 
-  // sort array by total view
+  // sort array
   let x = allNews.sort((a, b) => (b.total_view > a.total_view ? 1 : -1));
 
 
@@ -89,7 +85,6 @@ Details <i class="fa-solid fa-arrow-right"></i>
 }
 const loadNewsDetails = async id => {
   const url = `https://openapi.programming-hero.com/api/news/${id}`;
-  // console.log(url);
   const res = await fetch(url)
   const data = await res.json()
   console.log(data);
