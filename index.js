@@ -34,11 +34,11 @@ const newsByCategorie = (id) => {
 const displayNews = (allNews) => {
   const arrlen = allNews.length;
   if (arrlen == 0) {
-    document.getElementById('total-news-displayed').innerText = "No news found";
+    document.getElementById('total-news-displayed').innerText = "No news items found";
     spinner.classList.add("d-none");
   }
   else {
-    document.getElementById('total-news-displayed').innerText = `${arrlen} news found `;
+    document.getElementById('total-news-displayed').innerText = `${arrlen} news items found here`;
   }
   const newsContainer = document.getElementById('news-container');
   newsContainer.textContent = " ";
